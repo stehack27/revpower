@@ -8,7 +8,7 @@ from tcp_server import TCP_Handler
 [os.makedirs(d) for d in [SCREENSHOT_DIRECTORY, UPLOAD_DIRECTORY, DOWNLOAD_DIRECTORY] if not os.path.exists(d)]
 
 #Start magic...
-print(f"{color.PURPLE}RevPower - @steppeerr{color.END}")
+print(f"{color.PURPLE}RevPower - @stepperr27{color.END}")
 http_thread = Thread(target=http_run, daemon=True)
 http_thread.start()
 tcp_thread = TCP_Handler().run()
