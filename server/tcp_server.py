@@ -1,7 +1,6 @@
 import time
 import socket
 from threading import Thread
-from termcolor import cprint, colored
 from settings import HOST, TCP_PORT, color
 #Kill all threads on CTRL+C
 import signal
